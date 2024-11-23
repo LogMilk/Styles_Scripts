@@ -5,9 +5,8 @@ end
 progress = 0
 
 function init_script()
-	Click = module_manager.register_number("Intave No Fall", "Click", 17, 15, 50, 1)
+    Click = module_manager.register_number("Intave No Fall", "Click", 17, 15, 50, 1)
     Fall = module_manager.register_number("Intave No Fall", "Min Fall Distance", 5, 3, 20, 1)
-    Listener = module_manager.register_number("Intave No Fall", "Lagback Check Tick", 20, 10, 100, 1)
     module_manager.register_label("Intave No Fall", "Click < 17 may not work")
 end
 
@@ -40,7 +39,7 @@ function on_player_move(event)
         event:set_z(0)
     elseif player.fall_distance() > Fall:get_int() and progress < 3 then
         event:set_x(0)
-	    event:set_z(0)
+	event:set_z(0)
     end
     if progress == 3 then
         event:set_x(0)
